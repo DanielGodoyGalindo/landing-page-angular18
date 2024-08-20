@@ -1,0 +1,23 @@
+<div class="container">
+    <h1>Información de nuestro producto (id:{{producto?.id}})</h1>
+    @if (loading){
+    <span>Cargando...</span>
+    } @else if(!loading){
+    <!-- <h3>Nombre</h3>
+    <span>{{producto?.title}}</span>
+    <h3>Descripción</h3>
+    <span>{{producto?.description}}</span>
+    <h3>Precio</h3>
+    <span>{{producto?.price|currency: "EUR"}}</span> -->
+    <div class="card" style="width: 20rem;">
+        <img class="card-img-top" src={{producto?.image}} alt="Card image cap">
+        <div class="card-body">
+            <p class="card-text">{{producto?.description}}</p>
+            <p class="card-text"><b>Precio:</b> {{producto?.price | currency: 'EUR'}}</p>
+        </div>
+    </div>
+    <div>
+        
+    </div>
+    }
+</div>

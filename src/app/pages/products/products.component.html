@@ -1,0 +1,26 @@
+<div class="layout">
+    <h1>Estos son todos nuestros productos</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Producto</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Detalles</th>
+            </tr>
+        </thead>
+        <!-- Mostrar todos los productos -->
+        <tbody>
+            @for (producto of this.listaProductos; track $index){
+            <tr>
+                <th scope="row">{{producto.id}}</th>
+                <td>{{producto.title}}</td>
+                <td>{{producto.price|currency: "EUR"}}</td>
+                <td>{{producto.description}}</td>
+                <td><button class="btn btn-primary" (click)="productInfo(producto.id)">Ver Detalles</button></td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
